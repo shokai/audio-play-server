@@ -18,9 +18,19 @@ end
 
 def get_audio_file(url)
   Dir.mkdir @@conf['tmp_dir'] unless File.exists? @@conf['tmp_dir']
-  fname = "#{@@conf['tmp_dir']}/#{Time.now.to_i}"
-  File.open(fname,'w+'){|f|
-    f.write open(url).read
-  }
+  fname = "#{@@conf['tmp_dir']}/#{url.gsub(/\//,'_')}"
+  unless File.exists? fname
+    begin
+      File.open(fname,'w+'){|f|
+        f.write open(url).read
+      }
+    rescue Timeout::Error => e
+      STDERR.puts e
+      File.delete fname
+    rescue => e
+      STDERR.puts e
+      File.delete fname
+    end
+  end
   fname
 end
