@@ -1,0 +1,4 @@
+player : '/usr/bin/afplay' # for Mac
+# player : '/usr/bin/mpg321' # for Linux
+
+tmp_dir : '/var/tmp/audio-server'
