@@ -14,8 +14,12 @@
       %input{:id => 'stop', :type => 'submit', :value => 'stop'}
     %div
       %h2 API
+      %h3 play
       %ul
         %li HTTP-POST #{app_root}/play
         %li post parameter "url"
+      %h3 stop
+      %ul
+        %li HTTP-POST #{app_root}/stop
     %hr
       %a{:href => 'https://github.com/shokai/audio-play-server'} github.com/shokai/audio-play-server

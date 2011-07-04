@@ -10,6 +10,7 @@ Dependencies
 * Mac OSX or Linux
 * Sinatra
 * afplay or mpg321
+* pkill (proctools)
 
 
 
@@ -20,6 +21,8 @@ Install Dependencies
     % bundle install
     
     % sudo apt-get install mpg321 # for Ubuntu
+
+    % brew install proctools # for MacOSX
 
 
 Run Server
