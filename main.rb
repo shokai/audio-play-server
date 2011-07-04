@@ -13,7 +13,7 @@ post '/play' do
   url = params['url']
   fname = get_audio_file(url)
   system "#{@@conf['stopper']}"
-  IO.popen "#{@@conf['player']} #{fname}"
+  IO.popen "#{@@conf['player']} '#{fname}'"
   url
 end
 
