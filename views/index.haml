@@ -5,12 +5,13 @@
     %script{:type => 'text/javascript', :src => "#{app_root}/jquery.js"}
     %script{:type => 'text/javascript', :src => "#{app_root}/main.js"}
     :javascript
-      api = "#{app_root}/play";
+      api = "#{app_root}";
   %body
     %h1= @title
     %div
       %input{:id => 'url', :type => 'text', :name => 'url', :size => 60, :value => 'http://dev.shokai.org/tmp/masui_voice/egg.mp3'}
-      %input{:id => 'play',:type => 'submit', :name => 'play', :value => 'play'}
+      %input{:id => 'play', :type => 'submit', :value => 'play'}
+      %input{:id => 'stop', :type => 'submit', :value => 'stop'}
     %div
       %h2 API
       %ul
