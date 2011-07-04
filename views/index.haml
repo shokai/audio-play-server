@@ -8,8 +8,9 @@
       api = "#{app_root}";
   %body
     %h1= @title
+    %div mp3のURLを書いて "play"
     %div
-      %input{:id => 'url', :type => 'text', :name => 'url', :size => 60, :value => 'http://dev.shokai.org/tmp/masui_voice/egg.mp3'}
+      %input{:id => 'url', :type => 'text', :name => 'url', :size => 60, :value => ''}
       %input{:id => 'play', :type => 'submit', :value => 'play'}
       %input{:id => 'stop', :type => 'submit', :value => 'stop'}
     %div
