@@ -33,7 +33,7 @@ edit "config.yaml"
 
 run
 
-    % ruby development.rb
+    % ruby development.ru
 
 
 for Passenger, use config.ru

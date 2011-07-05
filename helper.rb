@@ -2,6 +2,7 @@ require 'bundler/setup'
 require 'open-uri'
 require 'yaml'
 require 'haml'
+require 'cgi'
 
 begin
   @@conf = YAML::load open(File.dirname(__FILE__)+'/config.yaml').read
@@ -17,8 +18,8 @@ def app_root
 end
 
 def get_audio_file(url)
-  Dir.mkdir @@conf['tmp_dir'] unless File.exists? @@conf['tmp_dir']
-  fname = "#{@@conf['tmp_dir']}/#{url.gsub(/\//,'_')}"
+  FileUtils.mkdir_p @@conf['tmp_dir'] 
+  fname = "#{@@conf['tmp_dir']}/#{CGI.escape(url)}"
   unless File.exists? fname
     begin
       File.open(fname,'w+'){|f|
